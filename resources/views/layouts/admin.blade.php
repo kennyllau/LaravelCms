@@ -154,7 +154,7 @@
                             </li>
 
                             <li>
-                                <a href="{{route('admin.categories.create')}}">Create Category</a>
+                                <a href="{{route('admin.categories.create')}}">Edit Category</a>
                             </li>
 
                         </ul>
