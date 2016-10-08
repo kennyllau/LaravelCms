@@ -21,6 +21,10 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('body');
             $table->timestamps();
+
+            // foreign key is going to be user_id to relate the user table and post table
+            // on users then casade down and delete
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
