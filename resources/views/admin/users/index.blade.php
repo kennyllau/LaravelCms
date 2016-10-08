@@ -24,7 +24,6 @@
 			</tr>
 		</thead>
 		<tbody>
-
 		@if($users)
 			@foreach($users as $user)
 				<tr>
@@ -40,7 +39,7 @@
 					<td>{{$user->email}}</td>
 
 					<td>{{$user->role->name}}</td>
-					<td>{{ $user->is_active == 1 ? 'Active' : 'Not Active' }} </td>
+					<td>{{ $user->is_active}} </td>
 					
 					<!-- carbon is included with laravel -->
 					<td>{{ $user->created_at->diffForHumans() }}</td>
@@ -48,6 +47,7 @@
 				</tr>
 			@endforeach
 		@endif
+
 
 		</tbody>
 	</table>
