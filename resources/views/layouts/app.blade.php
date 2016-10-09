@@ -58,7 +58,7 @@
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
 
-                        @if(Auth::user()->role_id == 1)
+                        @if(Auth::user()->role_id == 1 && Auth::user()->is_active == 1)
                             <li>
                                 <a href="/admin">admin</a>
                             </li>

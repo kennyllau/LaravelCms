@@ -11,7 +11,7 @@
 
 	<h2>Posts</h2>
 
-	<table class="table table-hover table-stripe table-bordered">
+	<table class="table table-hover table-stripe">
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -20,6 +20,8 @@
 				<th>Title</th>
 				<th>Body</th>
 				<th>Category</th>
+				<th>Post Link</th>
+				<th>Comments Link</th>
 				<th>Created</th>
 				<th>Updated</th>
 			</tr>
@@ -41,6 +43,10 @@
 							<td>{{str_limit($post->body, 15)}}</td>
 
 							<td>{{$post->category_id ? $post->category->name : 'Uncategorized'}}</td>
+
+							<td><a href="{{route('home.post', $post->id)}}">View Post</a></td>
+
+							<td><a href="{{route('admin.comments.show', $post->id)}}">View Comments</a></td>
 
 							<td>{{$post->created_at}}</td>
 							<td>{{$post->updated_at}}</td>
