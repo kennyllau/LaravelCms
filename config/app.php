@@ -149,6 +149,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         // form from laravelcollective
         Collective\Html\HtmlServiceProvider::class,
+        // sluggable service provider
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
 
 
         /*
