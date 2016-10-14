@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/post/{id}', ['as'=>'home.post', 'uses'=>'AdminPostsController@post']);
 
 
+
 // create an array for the middleware and tell it which middleware
 Route::group(['middleware'=>'admin'], function(){
 

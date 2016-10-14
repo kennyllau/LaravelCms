@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blog Post - Start Bootstrap Template</title>
+    <title>Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
@@ -38,13 +38,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">Blog</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">Articles</a>
                     </li>
                     <li>
                         <a href="#">Services</a>
@@ -53,6 +53,14 @@
                         <a href="#">Contact</a>
                     </li>
                 </ul>
+                    @if(Auth::user()->role_id == 1 && Auth::user()->is_active == 1)
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/admin">Admin</a>
+                        </li>
+                    </ul>
+                    @endif
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -94,14 +102,10 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
+                            @foreach($categories as $category)
+                                <li><a href="#">{{$category->name}}</a>
                                 </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
+                            @endforeach
                             </ul>
                         </div>
                         <div class="col-lg-6">
